@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: darkslategray;
+}
+.container {
+    width: 90%;
+    margin: 0px auto;
+}
+
+.resultado {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.paginas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.paginas button {
+  border: none;
+  background-color: white;
+  border-radius: 50%;
+  padding-top: 3px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.paginas button:hover {
+  transform: scale(1.5);
+  background-color: black;
+  color: white;
+}
+.mx-10 {
+  margin: 0 10px;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 15%;
+    display: inline-block;
+  }
+  
+  .card img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .card h3 {
+    margin-top: 5px;
+    font-size: 16px;
+  }
+  
+  .card p {
+    font-size: 14px;
+    color: black;
+  }

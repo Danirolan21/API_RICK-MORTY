@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RICK & MORTY API</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form id="formularioBuscar" action="" method="post">
+            <label for="nombre">Nombre: </label>
+            <input type="text" name="nombre" id="nombre">
+            <input type="submit" value="Buscar">
+        </form>
+
+        <div class="resultado"></div>
+        <div class="paginas">
+            <button class="prevpag">&lt;</button>
+            <h3 class="mx-10">Pagina </h3>
+            <button class="nextpag">&gt;</button>
+        </div>
+    </div>
+
+    <template class="plantilla">
+        <div class="card">
+            <img src="" alt="">
+            <h3></h3>
+            <p class="status"></p>
+            <p class="species"></p>
+            <p class="gender"></p>
+        </div>
+    </template>
+    <script src="javascript.js"></script>
+</body>
+
+</html>
