@@ -9,13 +9,22 @@
 </head>
 
 <body>
-    <div class="container">
-        <form id="formularioBuscar" action="" method="post">
-            <label for="nombre">Nombre: </label>
-            <input type="text" name="nombre" id="nombre">
-            <input type="submit" value="Buscar">
-        </form>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo"><img src="logo.webp" alt=""></a>
+            <form id="formularioBuscar" class="search-form" action="" method="post">
+                <input type="text" id="busqueda" placeholder="Buscar...">
+                <button type="submit">Buscar</button>
+            </form>
+            <ul class="nav-links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Acerca</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
 
+    <div class="content">
         <div class="resultado"></div>
         <div class="paginas">
             <button class="prevpag">&lt;</button>
@@ -24,6 +33,13 @@
         </div>
     </div>
 
+    <div id="characterModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="detalle row" id="detalle-personaje-modal">
+            </div>
+        </div>
+    </div>
     <template class="plantilla">
         <div class="card">
             <img src="" alt="">

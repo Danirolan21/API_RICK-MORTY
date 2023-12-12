@@ -1,24 +1,95 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
+
 body {
-    background-color: darkslategray;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #324055;
 }
+/*Estilo para Barra de Navegación*/
+.navbar {
+  background-color: #23334a;
+  color: white;
+  padding: 15px 0;
+}
+
 .container {
-    width: 90%;
-    margin: 0px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.logo img{
+  width: 80px;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+
+.search-form input[type="text"] {
+  width: 80%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.search-form button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.search-form button:hover {
+  background-color: #45a049;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #FFD700; 
+}
+.content {
+  width: 90%;
+  margin: 0 auto;
 }
 
 .resultado {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
+
 .paginas {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .paginas button {
   border: none;
   background-color: white;
@@ -27,35 +98,101 @@ body {
   cursor: pointer;
   transition: all 0.5s;
 }
+
 .paginas button:hover {
   transform: scale(1.5);
   background-color: black;
   color: white;
 }
+
 .mx-10 {
   margin: 0 10px;
 }
 
+/* Estilo para la tarjeta (card) */
 .card {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px;
-    width: 15%;
-    display: inline-block;
-  }
-  
-  .card img {
-    width: 100%;
-    border-radius: 5px;
-  }
-  
-  .card h3 {
-    margin-top: 5px;
-    font-size: 16px;
-  }
-  
-  .card p {
-    font-size: 14px;
-    color: black;
-  }
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px;
+  width: 200px;
+  text-align: center;
+  background-color: #acb1b5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  margin: 5px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.card p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Estilo cuando se hace hover sobre la tarjeta */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para la modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+
+.row {
+  display: flex;
+}
+
+.detalle {
+  display: flex;
+  align-items: center;
+}
+
+.detalle img {
+  width: 90%;
+}

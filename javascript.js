@@ -1,5 +1,5 @@
 const formulario = document.getElementById("formularioBuscar");
-const inputNombre = document.getElementById("nombre");
+const inputNombre = document.getElementById("busqueda");
 const divResultados = document.querySelector(".resultado");
 const paginado = document.querySelector(".paginas");
 const plantilla = document.querySelector("template.plantilla").content;
@@ -89,11 +89,51 @@ function pintaCharacters(characters) {
         plantilla.querySelector("p.gender").textContent = "Gender: " + element.gender;
 
         const clone = plantilla.cloneNode(true);
+        clone.querySelector('.card').addEventListener('click', () => {
+            showCharacterDetails(element.id);
+        });
+
         fragment.appendChild(clone);
     });
 
     divResultados.appendChild(fragment);
 }
+const modal = document.getElementById('characterModal');
+const closeModalSpan = document.querySelector('.close');
+
+function showCharacterDetails(characterId) {
+    const characterDetailsUrl = `${urlCharacters}/${characterId}`;
+
+    fetch(characterDetailsUrl)
+        .then(response => response.json())
+        .then(character => {
+            const detallePersonajeModal = document.getElementById('detalle-personaje-modal');
+
+            const detailsHTML = `
+                <div class="personajeImg"><img src="${character.image}" alt="${character.name}"></div>
+                <div class="details"><h3>${character.name}</h3>
+                <p>Status: ${character.status}</p>
+                <p>Species: ${character.species}</p>
+                <p>Gender: ${character.gender}</p>
+                <p>Origin: ${character.origin.name}</p>
+                <p>Last Known Location: ${character.location.name}</p>
+                <p>More Info: <a href="${character.url}" target="_blank">${character.url}</a></p></div>
+            `;
+
+            detallePersonajeModal.innerHTML = detailsHTML;
+
+            // Mostrar la modal
+            modal.style.display = 'block';
+        })
+        .catch(error => {
+            console.error('Error fetching character details:', error);
+            // Manejar la situación de error, mostrar un mensaje, etc.
+        });
+}
+
+closeModalSpan.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
 
 formulario.addEventListener("submit", e => {
     e.preventDefault();
@@ -109,4 +149,10 @@ paginado.querySelector(".nextpag").addEventListener("click", next);
 window.addEventListener("load", () => {
     fetchCharacters();
     displayPageNumber(currentPage);
+});
+
+window.addEventListener('click', event => {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
 });
